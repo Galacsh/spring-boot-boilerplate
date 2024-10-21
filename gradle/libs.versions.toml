@@ -1,0 +1,11 @@
+[versions]
+# Version references
+
+[libraries]
+# Library references with version references
+
+[bundles]
+# Bundle references with library references
+
+[plugins]
+# Plugin references with version references
