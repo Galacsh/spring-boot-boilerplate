@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: "actuator"
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+management:
+  endpoint:
+    health:
+      show-details: never
+  endpoints:
+    web:
+      exposure:
+        # See: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+        include:
+          - "health"
+          - "heapdump"
