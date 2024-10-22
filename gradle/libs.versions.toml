@@ -2,6 +2,7 @@
 # Version references
 spring-boot = "3.3.4"
 spring-dependency = "1.1.6"
+asciidoctor = "4.0.3"
 
 [libraries]
 # Library references with version references
@@ -13,3 +14,4 @@ spring-dependency = "1.1.6"
 # Plugin references with version references
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
 spring-dependency = { id = "io.spring.dependency-management", version.ref = "spring-dependency" }
+asciidoctor = { id = "org.asciidoctor.jvm.convert", version.ref = "asciidoctor" }

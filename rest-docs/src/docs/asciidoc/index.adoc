@@ -1,0 +1,13 @@
+= Index 예제
+
+== Sample API
+
+=== Hello, world!
+- HTTP Request
+include::{snippets}/index/http-request.adoc[]
+
+- HTTP Response
+include::{snippets}/index/http-response.adoc[]
+
+- Response Body
+include::{snippets}/index/response-body.adoc[]
