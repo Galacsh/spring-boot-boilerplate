@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AppRunner implements ApplicationRunner {
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         System.out.println("""
                 ================================================================================
                 See difference when running the application with the "prod" profile.
