@@ -1,10 +1,10 @@
-package io.galacsh.logback;
+package io.galacsh.actuator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TemplateApplicationTests {
+class ActuatorApplicationTests {
 
     @Test
     void contextLoads() {
