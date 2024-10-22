@@ -1,6 +1,28 @@
 spring:
   application:
     name: "actuator"
+  profiles:
+    # activate "development" profile group by default
+    active: development
+
+---
+
+### Profiles config ###
+spring:
+  config:
+    import:
+      - classpath:configs/actuator.yml
+  profiles:
+    group:
+      production:
+        - actuator
+      development:
+        - actuator-development
+
+---
+
+### Misc config ###
+spring:
   main:
     banner-mode: off
   output:
@@ -8,37 +30,6 @@ spring:
       enabled: detect
   lifecycle:
     timeout-per-shutdown-phase: 10s
-
 server:
   port: ${SERVER_PORT:8080}
   shutdown: graceful
-
-management:
-  endpoint:
-    health:
-      probes:
-        enabled: true
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
----
-
-spring:
-  config:
-    activate:
-      on-profile: "prod"
-
-management:
-  endpoint:
-    health:
-      show-details: never
-  endpoints:
-    web:
-      exposure:
-        # See: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
-        include:
-          - "health"
-          - "heapdump"

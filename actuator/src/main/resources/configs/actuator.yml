@@ -1,0 +1,54 @@
+########################################################################
+# Import this file in your application.yml.
+# Then activate "actuator" or "actuator-dev" profile.
+#
+# For more endpoints, see:
+#   https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+########################################################################
+
+### For production ###
+spring:
+  config:
+    activate:
+      on-profile: actuator
+management:
+  endpoint:
+    health:
+      show-details: never
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - heapdump
+          - threaddump
+          - metrics
+
+---
+
+### For development ###
+spring:
+  config:
+    activate:
+      on-profile: actuator-development
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+### Default ###
+spring:
+  config:
+    activate:
+      on-profile: actuator | actuator-development
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true

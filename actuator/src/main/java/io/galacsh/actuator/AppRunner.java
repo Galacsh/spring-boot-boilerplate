@@ -10,7 +10,7 @@ public class AppRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         System.out.println("""
                 ================================================================================
-                See difference when running the application with the "prod" profile.
+                See difference when running the application with the "production" profile.
                 
                 👍 Checkout this URL for more information about the actuator endpoints:
                     https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
