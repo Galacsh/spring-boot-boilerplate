@@ -1,13 +1,14 @@
 spring:
   application:
     name: "actuator"
+  # Activate "development" profile group by default.
+  # Use "--spring.profiles.active=production" to activate "production" profile group.
   profiles:
-    # activate "development" profile group by default
     active: development
 
 ---
 
-### Profiles config ###
+### Import and group profiles ###
 spring:
   config:
     import:
@@ -17,11 +18,11 @@ spring:
       production:
         - actuator
       development:
-        - actuator-development
+        - actuator-expose-all
 
 ---
 
-### Misc config ###
+### Other configs ###
 spring:
   main:
     banner-mode: off
@@ -30,6 +31,11 @@ spring:
       enabled: detect
   lifecycle:
     timeout-per-shutdown-phase: 10s
+
 server:
   port: ${SERVER_PORT:8080}
   shutdown: graceful
+
+logging:
+  level:
+    root: info

@@ -1,0 +1,18 @@
+############################################
+# Import this file in your application.yml.
+# Then activate "logback" profile if needed.
+############################################
+
+spring:
+  config:
+    activate:
+      on-profile: logback
+
+logging:
+  file:
+    name: "logs/${spring.application.name}/recent.log"
+  logback:
+    rollingpolicy:
+      file-name-pattern: "logs/${spring.application.name}/%d{yyyy-MM-dd}.%i.log"
+      max-file-size: 10MB
+      max-history: 30

@@ -1,6 +1,26 @@
 spring:
   application:
     name: "template"
+  # Activate "development" profile group by default.
+  # Use "--spring.profiles.active=production" to activate "production" profile group.
+  profiles:
+    active: development
+
+---
+
+### Import and group profiles ###
+spring:
+  config:
+    import:
+  profiles:
+    group:
+      production:
+      development:
+
+---
+
+### Other configs ###
+spring:
   main:
     banner-mode: off
   output:
@@ -12,3 +32,7 @@ spring:
 server:
   port: ${SERVER_PORT:8080}
   shutdown: graceful
+
+logging:
+  level:
+    root: info

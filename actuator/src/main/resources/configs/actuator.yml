@@ -11,6 +11,7 @@ spring:
   config:
     activate:
       on-profile: actuator
+
 management:
   endpoint:
     health:
@@ -30,7 +31,8 @@ management:
 spring:
   config:
     activate:
-      on-profile: actuator-development
+      on-profile: actuator-expose-all
+
 management:
   endpoint:
     health:
@@ -47,6 +49,7 @@ spring:
   config:
     activate:
       on-profile: actuator | actuator-development
+
 management:
   endpoint:
     health:
