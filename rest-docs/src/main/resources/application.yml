@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "template"
+    name: "rest-docs"
   # Activate "development" profile group by default.
   # Use "--spring.profiles.active=production" to activate "production" profile group.
   profiles:
