@@ -6,6 +6,7 @@
 - [ ] JPA + DB + Flyway
 - [ ] JPA + Multi DB
 - [ ] JPA + Multi DB + Flyway
-- [ ] Springdoc
+- [x] Springdoc
 - [x] REST Docs
 - [ ] Validation
+- [ ] Jacoco + SonarQube
