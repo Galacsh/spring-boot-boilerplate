@@ -1,6 +1,6 @@
 ########################################################################
 # Import this file in your application.yml.
-# Then activate "actuator" or "actuator-dev" profile.
+# Then activate "actuator" or "actuator-expose-all" profile.
 #
 # For more endpoints, see:
 #   https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
@@ -48,7 +48,7 @@ management:
 spring:
   config:
     activate:
-      on-profile: actuator | actuator-development
+      on-profile: actuator | actuator-expose-all
 
 management:
   endpoint:
