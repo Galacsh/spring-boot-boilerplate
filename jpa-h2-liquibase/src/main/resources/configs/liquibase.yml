@@ -1,0 +1,31 @@
+########################################################################
+# Import this file in your application.yml.
+# Then activate "liquibase" or "liquibase-seeded" profile.
+#
+# For more endpoints, see:
+#   https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+########################################################################
+
+### For production ###
+spring:
+  config:
+    activate:
+      on-profile: liquibase
+  liquibase:
+    change-log: classpath:db/changelog/master.yaml
+
+---
+
+### For development ###
+spring:
+  config:
+    activate:
+      on-profile: liquibase-seeded
+  liquibase:
+    change-log: classpath:db/changelog/master-seed.yaml
+    show-summary: verbose
+logging:
+  level:
+    liquibase:
+      # to see the SQL queries executed by Liquibase
+      executor: debug

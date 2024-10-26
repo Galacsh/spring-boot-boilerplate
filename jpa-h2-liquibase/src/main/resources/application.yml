@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: "jpa-h2-liquibase"
+  # Activate "development" profile group by default.
+  # Use "--spring.profiles.active=production" to activate "production" profile group.
+  profiles:
+    active: development
+
+---
+
+### Import and group profiles ###
+spring:
+  config:
+    import:
+      - classpath:configs/h2.yml
+      - classpath:configs/actuator.yml
+      - classpath:configs/liquibase.yml
+  profiles:
+    group:
+      production:
+        - h2-file
+        - actuator
+        - liquibase
+      development:
+        - h2-memory
+        - actuator-expose-all
+        - liquibase-seeded
+
+---
+
+### Other configs ###
+spring:
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: detect
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+
+server:
+  port: ${SERVER_PORT:8080}
+  shutdown: graceful
+
+logging:
+  level:
+    root: info

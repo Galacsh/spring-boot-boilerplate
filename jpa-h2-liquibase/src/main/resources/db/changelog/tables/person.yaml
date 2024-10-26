@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-person-table
+      author: Galacsh
+      # liquibase update --label-filter="can AND (be OR used)" ...
+      # See: https://docs.liquibase.com/concepts/changelogs/attributes/labels.html
+      labels: can be used as a filter
+      # liquibase update --context-filter="!test" ...
+      # See: https://docs.liquibase.com/concepts/changelogs/attributes/contexts.html
+      context: test
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: person-add-age
+      author: Galacsh
+      labels: column
+      changes:
+        - addColumn:
+            tableName: person
+            columns:
+              - column:
+                  name: age
+                  type: int
+                  defaultValueNumeric: "-1"

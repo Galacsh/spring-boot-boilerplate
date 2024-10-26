@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: clear-people
+      author: Galacsh
+      changes:
+        - delete:
+            tableName: person
+            where: id > 0
+  - changeSet:
+      id: insert-people
+      author: Galacsh
+      changes:
+        - loadData:
+            tableName: person
+            file: db/changelog/seed/person.csv
+            encoding: UTF-8

@@ -1,0 +1,43 @@
+########################################################################
+# Import this file in your application.yml.
+# Then activate "h2-memory" or "h2-file" profile.
+########################################################################
+
+spring:
+  config:
+    activate:
+      on-profile: h2-memory
+  datasource:
+    url: jdbc:h2:mem:${DB_NAME:data}
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: h2-file
+  datasource:
+    url: jdbc:h2:file:./h2/${spring.application.name}/data
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: h2-memory | h2-file
+  h2:
+    console:
+      path: /h2
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    show-sql: on
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
