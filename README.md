@@ -9,5 +9,7 @@
 - [x] [Springdoc](springdoc)
 - [x] [REST Docs](rest-docs)
 - [x] [Validation](validation)
-- [x] Jacoco + SonarQube
-- [ ] Custom Spring Boot Starter
+- [x] [Jacoco + SonarQube](jacoco-sonarqube)
+- [x] Custom Spring Boot Starter
+  - [Starter](custom-starter/sample-spring-boot-starter)
+  - [Using Starter](custom-starter/using-starter)
