@@ -6,5 +6,7 @@ include("template")
 include("logback", "actuator", "validation", "jacoco-sonarqube")
 // documentation related
 include("rest-docs", "springdoc")
+// custom starter
+include("custom-starter:sample-spring-boot-starter", "custom-starter:using-starter")
 // database related
 include("jpa-h2")
