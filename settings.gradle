@@ -3,7 +3,7 @@ rootProject.name = 'spring-boot-boilerplate'
 // template for new project
 include("template")
 // foundation
-include("logback", "actuator", "validation")
+include("logback", "actuator", "validation", "jacoco-sonarqube")
 // documentation related
 include("rest-docs", "springdoc")
 // database related
