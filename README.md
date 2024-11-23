@@ -3,6 +3,7 @@
 - [x] [Logback](logback)
 - [x] [Actuator](actuator)
 - [x] [JPA + H2](jpa-h2)
+- [ ] [JPA + H2 + QueryDSL](jpa-h2-querydsl)
 - [x] [JPA + H2 + Liquibase](jpa-h2-liquibase)
 - [ ] JPA + H2 + Flyway
 - [ ] JPA + Multi DB (MariaDB, PostgreSQL)

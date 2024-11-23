@@ -9,4 +9,4 @@ include("rest-docs", "springdoc")
 // custom starter
 include("custom-starter:sample-spring-boot-starter", "custom-starter:using-starter")
 // database related
-include("jpa-h2", "jpa-h2-liquibase")
+include("jpa-h2", "jpa-h2-liquibase", "jpa-h2-querydsl")
